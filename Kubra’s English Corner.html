@@ -1,0 +1,298 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kubra’s English Corner</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f4ff;--card:#fff;--ink:#1f2340;--mut:#646a8c;--acc:#6254d9;--ok:#14a06f;--bad:#d8465f;--line:#e4e5f4;--soft:#eeecff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#12132a;--card:#1c1e3d;--ink:#eef0ff;--mut:#a2a7cf;--line:#2d3060;--soft:#2a2760;--acc:#968aff}}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:17px/1.55 Nunito,system-ui,sans-serif;font-weight:600}
+h1,h2,h3{margin:0;line-height:1.2}
+.top{background:var(--card);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;padding:10px 20px;flex-wrap:wrap}
+.logo{font-weight:900;font-size:20px}.logo b{color:var(--acc)}
+.rt{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.chip{background:var(--soft);border-radius:999px;padding:3px 13px;font-weight:800;font-size:15px}
+.lang{display:flex;border:2px solid var(--acc);border-radius:999px;overflow:hidden}
+.lang button{border:0;background:none;color:var(--acc);font:inherit;font-weight:900;font-size:14px;padding:3px 13px;cursor:pointer}
+.lang button.on{background:var(--acc);color:#fff}
+main{max-width:1050px;margin:0 auto;padding:22px 20px 60px}
+.grid{display:grid;grid-template-columns:1fr 300px;gap:22px;align-items:start}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:16px}.card.hi{border:2px solid var(--acc)}
+.btn{border:0;border-radius:12px;padding:12px 22px;font:inherit;font-weight:900;background:var(--acc);color:#fff;cursor:pointer}.btn.g{background:var(--soft);color:var(--ink)}.btn.ok{background:var(--ok)}
+button:focus-visible,input:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.hex{width:62px;height:62px;background:var(--soft);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:grid;place-items:center;font-size:30px;flex:none}
+.small{color:var(--mut);font-size:14px;font-weight:700}
+.bar{height:10px;border-radius:9px;background:var(--line);overflow:hidden;flex:1}.bar i{display:block;height:100%;background:var(--acc);width:0;transition:width .4s}
+.uh{display:flex;justify-content:space-between;font-weight:800;margin:18px 0 8px}.uh span{color:var(--mut);font-weight:600}
+.dots{display:flex;flex-wrap:wrap;gap:7px}
+.dot{width:28px;height:28px;border-radius:50%;border:2px solid var(--line);background:var(--card);color:#fff;font-size:13px;cursor:pointer;padding:0}
+.dot:hover{border-color:var(--acc)}.dot.dn{background:var(--ok);border-color:var(--ok)}.dot.nx{background:var(--acc);border-color:var(--acc);box-shadow:0 0 0 4px var(--soft)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stats .card{margin:0;padding:16px}.stats b{font-size:30px;display:block;line-height:1.1}.stats span{color:var(--mut);font-size:14px}
+.step{display:flex;gap:12px;margin-top:12px}.step i{flex:none;width:28px;height:28px;border-radius:50%;background:var(--soft);color:var(--acc);display:grid;place-items:center;font-style:normal;font-weight:900}.step p{margin:0;font-size:15px}
+.exbar{display:flex;gap:14px;align-items:center;margin-bottom:16px}
+#ex .card{max-width:680px;margin:0 auto}
+.big{font-size:24px;font-weight:800;margin:14px 0}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}
+.opt{border:2px solid var(--line);border-bottom-width:4px;background:var(--card);color:var(--ink);border-radius:14px;padding:14px;font:inherit;font-weight:800;text-align:left;cursor:pointer}
+.opt:hover{border-color:var(--acc)}.opt.on{border-color:var(--acc);background:var(--soft)}
+input{width:100%;font:inherit;font-size:22px;font-weight:800;padding:12px 14px;border-radius:12px;border:2px solid var(--line);background:var(--card);color:var(--ink);margin-top:14px}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0}
+.ans{min-height:62px;border-bottom:2px solid var(--line);border-top:2px solid var(--line);padding:8px 0;display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.bank{display:flex;gap:8px;flex-wrap:wrap;min-height:50px}
+.tile{border:2px solid var(--line);border-bottom-width:4px;background:var(--card);color:var(--ink);border-radius:12px;padding:8px 14px;font:inherit;font-size:19px;font-weight:800;cursor:pointer}
+.fb{border-radius:14px;padding:14px 18px;margin-top:14px;font-weight:800}.fb.ok{background:#d9f6ec;color:#07553f}.fb.no{background:#ffe3ea;color:#6a1030}
+.fb div{font-weight:600;margin-top:4px}.fb .btn{margin-top:10px}
+.sign{text-align:center;color:var(--mut);font-size:14px;margin-top:26px}
+.lesson{background:var(--soft);border-radius:14px;padding:4px 18px;margin:12px 0;font-size:18px}.lesson p{margin:10px 0}
+.opt.ok{border-color:var(--ok);background:#d9f6ec;color:#07553f}.opt.no{border-color:var(--bad);background:#ffe3ea;color:#6a1030}
+.ow{display:flex;gap:6px}.ow .opt{flex:1}.sp{border:2px solid var(--line);border-bottom-width:4px;background:var(--soft);border-radius:12px;padding:0 12px;cursor:pointer;font-size:18px}.sq{padding:4px 12px;margin-left:8px;vertical-align:middle}
+@media(max-width:820px){.grid{grid-template-columns:1fr}main{padding:14px}.opts{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.bar i{transition:none}}
+body{background:radial-gradient(900px 400px at 85% -5%,var(--soft),transparent),var(--bg)}
+.top{background:linear-gradient(120deg,#463aa8,#7a6cff);border:0;box-shadow:0 8px 28px #4d40b940;color:#fff}
+.logo b{color:#ffd966}.chip{background:#ffffff2b;color:#fff}.lang{border-color:#fff}.lang button{color:#fff}.lang button.on{background:#fff;color:#4d40b9}#vs option{color:#20263a}
+.card{border-radius:22px;box-shadow:0 12px 32px #2b35651a}.card.hi{background:linear-gradient(135deg,var(--soft),var(--card) 70%)}
+.btn{box-shadow:0 4px 0 #3b2fa0;transition:transform .1s,box-shadow .1s}.btn.g{box-shadow:0 4px 0 var(--line);border:1px solid var(--line)}.btn.ok{box-shadow:0 4px 0 #0c6e4c}.btn:active{transform:translateY(3px);box-shadow:none}
+.hex{width:72px;height:72px;font-size:36px;background:linear-gradient(135deg,#ffd966,#ffb703)}
+.bar{height:14px}.bar i{background:linear-gradient(90deg,#6254d9,#ff9bd2,#ffb703)}
+.dot{width:32px;height:32px;font-weight:900;transition:transform .12s}.dot:hover{transform:scale(1.15)}.uh b{font-size:18px}
+.opt,.tile{transition:transform .1s,border-color .1s}.opt:hover,.tile:hover{transform:translateY(-2px)}
+h1{background:linear-gradient(90deg,#6254d9,#d65db1);-webkit-background-clip:text;background-clip:text;color:transparent}
+.wc{text-align:center;margin-top:12px;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:18px;padding:16px}.ww{font-size:38px;font-weight:900;color:var(--acc);line-height:1.1}.wt{font-size:24px;font-weight:800;margin:4px 0 10px}.wd,.we{font-weight:600;font-size:16px;margin-top:8px}.wtr{color:var(--mut);font-size:15px;margin-top:2px}.we{font-style:italic}.wc .sp{padding:2px 10px;margin-left:6px;vertical-align:middle}
+.wg{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}.wg .wc{margin:0;box-shadow:0 12px 32px #2b35651a}
+.ic{width:1.15em;height:1.15em;vertical-align:-.2em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.logo .ic{width:1.5em;height:1.5em}.hex .ic{width:1.3em;height:1.3em}
+#ex .card{padding:28px;border-radius:26px}
+.opt{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:1px;border-radius:16px;min-height:66px;text-align:left}
+.opt .ot{font-size:19px}.otr{font-size:14px;color:var(--mut);font-weight:600}.opt.on{box-shadow:0 0 0 4px var(--soft)}.opt.ok .otr{color:#2d7a5c}.opt.no .otr{color:#a3394f}
+.qtr{color:var(--mut);font-size:18px;font-weight:600;margin:-6px 0 8px;padding-left:12px;border-left:4px solid var(--acc)}
+.sp{display:inline-grid;place-items:center;color:var(--acc);font-size:20px}.ow>.sp{width:50px;flex:none;padding:0}.sq{width:44px;height:44px;padding:0;margin-left:10px;vertical-align:middle;border-radius:14px}.wc .sp{width:auto;padding:2px 10px}
+.sp.trb{display:inline-flex;align-items:center;justify-content:center;gap:2px}.sp.trb::after{content:"TR";font-size:10px;font-weight:900}.qtr .sp,.small .sp{width:auto;height:auto;padding:2px 8px;margin-left:6px;vertical-align:middle;font-size:16px;border-radius:10px}.ow>.sp.trb{width:56px}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-sound" viewBox="0 0 24 24"><path d="M3.5 9.5v5H7l5 4v-13l-5 4H3.5z"/><path d="M15.5 9.2a4 4 0 0 1 0 5.6M18.3 6.6a8 8 0 0 1 0 10.8"/></symbol>
+<symbol id="i-slow" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 8.5V13l3 2M9.5 2.5h5"/></symbol>
+<symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 3c.6 3.2 5.5 5.2 5.5 10.2a5.5 5.5 0 0 1-11 0c0-2.2 1-3.6 2.4-4.8.1 1.8.9 2.9 2 3.3-.3-3 .4-5.6 1.1-8.7z"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2.5L5 13.5h6l-1 8 8-11h-6l1-8z"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M5 5.5A2.5 2.5 0 0 1 7.5 3H19v15H7.5A2.5 2.5 0 0 0 5 20.5v-15zM5 20.5A2.5 2.5 0 0 0 7.5 21H19"/></symbol>
+<symbol id="i-cards" viewBox="0 0 24 24"><rect x="3.5" y="6" width="13" height="14" rx="2.5"/><path d="M8 3.5h10a2.5 2.5 0 0 1 2.5 2.5v11"/></symbol>
+<symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3zM18.5 16l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2z"/></symbol>
+<symbol id="i-duck" viewBox="0 0 24 24"><ellipse cx="11" cy="16" rx="8" ry="5" fill="#ffc83d" stroke="#e59a00"/><circle cx="16" cy="8" r="4.5" fill="#ffc83d" stroke="#e59a00"/><path d="M19.5 8l3 1-3 1.6z" fill="#ff8a3d" stroke="#ff8a3d"/><circle cx="16.8" cy="7.2" r=".9" fill="#20263a" stroke="none"/></symbol>
+</defs></svg>
+<header class="top"><div class="logo">🦆 Kubra’s English <b>Corner</b></div>
+<div class="rt"><button class="chip" id="acc" style="border:0;cursor:pointer;font:inherit;font-weight:800" aria-label="Accent">🔈 US</button><select class="chip" id="vs" style="border:0;max-width:150px;font:inherit;font-weight:700;color:inherit" aria-label="Voice"></select><div class="lang" role="group" aria-label="Language"><button id="le">EN</button><button id="lt">TR</button></div><span class="chip">🔥 <span id="sk">0</span></span><span class="chip">⚡ <span id="xp">0</span> XP</span></div></header>
+<main>
+<div id="home">
+<div style="display:flex;gap:16px;align-items:center;margin-bottom:20px"><div class="hex">🦆</div><div><h1 style="font-size:34px;font-weight:900">English</h1><div class="small" id="sub"></div></div></div>
+<div class="grid"><div>
+<div class="card hi"><h2 style="font-size:22px;margin-bottom:6px" data-k="wel"></h2><p style="margin:0 0 14px" data-k="welp"></p><button class="btn" id="cont"></button> <button class="btn g" id="wbtn" data-k="wbk"></button></div>
+<div class="card"><h3 id="hi" style="font-size:19px"></h3><div class="bar" style="margin-top:12px"><i id="pb"></i></div><div id="units"></div></div>
+<div class="stats"><div class="card"><b id="s1">0</b><span data-k="sd"></span></div><div class="card"><b id="s2">0</b><span data-k="sx"></span></div><div class="card"><b id="s3">0</b><span data-k="ss"></span></div></div>
+<div class="card"><h3 data-k="qt"></h3><p class="small" data-k="qd"></p><div class="row" id="qbtns"></div></div></div><aside><div class="card"><h3 data-k="how"></h3>
+<div class="step"><i>1</i><p data-k="h1"></p></div><div class="step"><i>2</i><p data-k="h2"></p></div><div class="step"><i>3</i><p data-k="h3"></p></div></div>
+<div class="card"><h3 data-k="dc"></h3><p class="small" style="margin:8px 0 0" data-k="dd"></p></div></aside></div>
+<div class="sign">Here you go, Ms. Kubra! I hope this helps you. — From your brother, Sean ❤️</div></div>
+<section id="ex" hidden>
+<div class="exbar"><button class="btn g" id="back" data-k="back"></button><div class="bar"><i id="ub"></i></div></div>
+<div class="card"><div class="small" id="eu"></div><div style="font-weight:800;color:var(--acc);margin-top:4px" id="ei"></div>
+<div id="body"></div><div class="row"><button class="btn" id="chk" data-k="chk"></button></div><div id="fb" aria-live="polite"></div></div>
+</section><section id="wb" hidden><div class="exbar"><button class="btn g" id="wback" data-k="back"></button><h2 data-k="wbt"></h2></div><div class="wg" id="wg"></div></section><section id="qz" hidden><div class="exbar"><button class="btn g" id="qback" data-k="back"></button><div class="bar"><i id="qb"></i></div></div><div class="card" id="qc"></div></section></main>
+<script>
+const $=s=>document.querySelector(s);
+const S={
+wel:['Welcome, Kubra!','Hoş geldin, Kubra!'],
+welp:['Every exercise is tiny: read or listen, answer, press Check. Little wins add up.','Her alıştırma küçük: oku ya da dinle, cevapla, Kontrol Et’e bas. Küçük başarılar birikir.'],
+sub:[(n,u)=>n+' exercises · '+u+' units · grammar, spelling, vocabulary',(n,u)=>n+' alıştırma · '+u+' ünite · dilbilgisi, yazım, kelime'],
+how:['How it works','Nasıl çalışır'],
+h1:['Read the question or listen to the word.','Soruyu oku ya da kelimeyi dinle.'],
+h2:['Answer by tapping or typing.','Dokunarak veya yazarak cevapla.'],
+h3:['Press Check. Each new correct answer earns 10 XP.','Kontrol Et’e bas. Her yeni doğru cevap 10 XP kazandırır.'],
+dc:['Dot colors','Nokta renkleri'],
+dd:['Green = done. Purple glow = your next one. Tap any dot to jump there.','Yeşil = tamam. Mor parlama = sıradaki. İstediğin noktaya dokunup atlayabilirsin.'],
+sd:['Exercises done','Biten alıştırma'],sx:['XP earned','Kazanılan XP'],ss:['Day streak','Günlük seri'],
+back:['← All exercises','← Tüm alıştırmalar'],chk:['Check','Kontrol et'],nx:['Next','Sonraki'],
+start:['Start: ','Başla: '],cont:['Continue: ','Devam: '],rev:['Review from the start','Baştan tekrar et'],
+hi0:['You’ve just started. Good luck, Kubra!','Yeni başladın. Bol şans, Kubra!'],
+hiN:['You finished everything. Amazing, Kubra! 🎉','Hepsini bitirdin. Harikasın, Kubra! 🎉'],
+hiD:[(d,n)=>d+' of '+n+' done. Keep going!',(d,n)=>n+' alıştırmanın '+d+' tanesi bitti. Devam!'],
+ok:['Correct!','Doğru!'],xp10:['+10 XP','+10 XP'],
+again:['Not quite. Try again!','Tam olmadı. Tekrar dene!'],ans:['The answer is:','Cevap:'],
+mean:['Meaning: ','Anlamı: '],ph:['Type here…','Buraya yaz…'],
+st:[(l,n)=>'Hint: starts with “'+l+'”, '+n+' letters.',(l,n)=>'İpucu: “'+l+'” ile başlar, '+n+' harf.'],
+mc:['Choose the correct answer.','Doğru cevabı seç.'],
+voc:['Which English word means…','Hangi İngilizce kelime şu anlama gelir…'],
+spot:['Which spelling is correct?','Hangi yazım doğru?'],
+sp:['Listen, then type the word. (🐢 = slow)','Dinle, sonra kelimeyi yaz. (🐢 = yavaş)'],
+un:['Tap the letters in the right order.','Harflere doğru sırayla dokun.'],
+od:['Build this sentence in English.','Bu cümleyi İngilizce kur.'],
+ls:['Lesson','Ders'],got:['Got it! +5 XP','Anladım! +5 XP'],ty:['Type the missing word.','Eksik kelimeyi yaz.'],rd:['Read, then answer.','Oku, sonra cevapla.'],
+qt:['Quizzes','Sınavlar'],qd:['No second tries here. Test yourself, then see what to review.','Burada ikinci şans yok. Kendini dene, sonra neleri tekrar edeceğini gör.'],
+q1:['Quick quiz · 10','Hızlı sınav · 10'],q2:['Grammar quiz · 15','Dilbilgisi sınavı · 15'],q3:['Spelling quiz · 15','Yazım sınavı · 15'],q4:['Vocabulary quiz · 15','Kelime sınavı · 15'],q5:['Mega quiz · 40','Mega sınav · 40'],
+qn:[(i,n)=>'Question '+i+' of '+n,(i,n)=>'Soru '+i+' / '+n],sc:[(a,n)=>'You scored '+a+' / '+n,(a,n)=>a+' / '+n+' puan aldın'],
+sc2:['Each correct answer earned 3 XP. Review the ones you missed below.','Her doğru cevap 3 XP kazandırdı. Kaçırdıklarına aşağıdan bak.'],sc3:['Perfect score! 🦆🎉','Tam puan! 🦆🎉'],ag:['Back to the lessons','Derslere dön'],miss:['Missed:','Kaçırdıkların:'],wbk:['📇 Word cards','📇 Kelime kartları'],wbt:['Word cards','Kelime kartları']};
+let LG='en';const t=(k,...a)=>{const v=S[k][LG=='en'?0:1];return typeof v=='function'?v(...a):v},p=a=>a[LG=='en'?0:1];
+const U=[['Grammar','Dilbilgisi'],['Contractions & punctuation','Kısaltmalar ve noktalama'],['Vocabulary','Kelime bilgisi'],['Spelling: listen & type','Yazım: dinle ve yaz'],['Spelling: spot the mistake','Yazım: hatayı bul'],['Spelling: unscramble','Yazım: harfleri diz'],['Sentence builder','Cümle kurma'],['Tenses','Zamanlar'],['Prepositions','Edatlar'],['Easy-to-mix-up words','Karıştırılan kelimeler'],['Everyday phrases','Günlük ifadeler'],['Irregular verbs','Düzensiz fiiller'],['Reading','Okuma'],['Numbers & time','Sayılar ve zaman']];
+const G=[
+['She ___ to school every day.','goes|go|going|gone',0,'Add -s/-es to the verb with she, he, it.','she, he, it ile fiile -s/-es eklenir.'],
+['They ___ happy yesterday.','was|were|is|am',1,'Use “were” with you, we, they.','you, we, they ile “were” kullanılır.'],
+['I ___ a student.','am|is|are|be',0,'“I” always goes with “am”.','“I” her zaman “am” ile kullanılır.'],
+['He ___ like tea.','don’t|doesn’t|not|isn’t',1,'He/she/it + doesn’t + base verb.','He/she/it + doesn’t + yalın fiil.'],
+['There ___ many people here.','is|am|are|be',2,'“Many people” is plural, so use “are”.','“Many people” çoğuldur, bu yüzden “are”.'],
+['This is ___ apple.','a|an|the a|some',1,'Use “an” before a vowel sound.','Sesli harf sesinden önce “an” kullanılır.'],
+['I have lived here ___ 2020.','for|since|during|at',1,'“Since” + a starting point; “for” + a length of time.','“Since” + başlangıç noktası; “for” + süre.'],
+['She is interested ___ music.','in|on|at|for',0,'The fixed phrase is “interested in”.','Kalıp: “interested in”.'],
+['If it rains, we ___ stay home.','would to|will|are|did',1,'If + present simple, then will + base verb.','If + geniş zaman, sonra will + yalın fiil.'],
+['This book is ___ than that one.','interesting|more interesting|most interesting|interestinger',1,'Long adjectives use “more” to compare.','Uzun sıfatlar karşılaştırmada “more” alır.'],
+['Ana and ___ are friends.','me|I|my|mine',1,'“I” is the subject here.','Burada “I” özne.'],
+['Neither answer ___ correct.','are|were|is|be',2,'“Neither” takes a singular verb.','“Neither” tekil fiil alır.'],
+['I enjoy ___ in the evening.','read|to read|reading|reads',2,'“Enjoy” is followed by -ing.','“Enjoy”dan sonra -ing gelir.'],
+['This is the ___ movie I’ve seen.','better|best|good|most better',1,'Use the superlative “best” for the top one.','En üstteki için “best” kullanılır.'],
+['There is ___ water in the cup.','less|fewer|few|many',0,'Water is uncountable, so use “less”.','Water sayılamaz, bu yüzden “less”.'],
+['She has ___ home.','went|gone|go|going',1,'has/have + past participle (gone).','has/have + fiilin 3. hali (gone).'],
+['Yesterday I ___ to the market.','go|goes|went|gone',2,'“Went” is the past of “go”.','“Went”, “go” fiilinin geçmişi.'],
+['How ___ apples do you have?','much|many|more|few',1,'Countable nouns use “many”.','Sayılabilir isimlerle “many”.'],
+['I’m good ___ drawing.','in|on|at|for',2,'The fixed phrase is “good at”.','Kalıp: “good at”.'],
+['He ___ TV right now.','watch|watches|is watching|watched',2,'“Right now” needs is/are + -ing.','“Right now” için is/are + -ing.']];
+const C=[
+['What is the short form of “do not”?','don’t|didn’t|doesn’t|isn’t',0,'The apostrophe replaces the missing “o”.','Kesme işareti eksik “o”nun yerini tutar.'],
+['What does “they’re” mean?','their|there|they are|they were',2,'“They’re” = “they are”. “Their” shows ownership.','“They’re” = “they are”. “Their” sahipliği gösterir.'],
+['You ___ told me!','should of|should’ve|shoud’ve|should off',1,'Say “should have” or “should’ve”, never “should of”.','“should have” ya da “should’ve” denir, “should of” asla.'],
+['The dog wagged ___ tail.','it’s|its|its’|it',1,'“Its” shows ownership; “it’s” = “it is”.','“Its” sahipliği gösterir; “it’s” = “it is”.'],
+['___ welcome!','Your|You’re|Youre|You',1,'“You’re” = “you are”.','“You’re” = “you are”.'],
+['Which sentence is punctuated correctly?','Where are you going.|Where are you going?|Where are you going!|Where are you going,',1,'A direct question ends with “?”.','Doğrudan soru “?” ile biter.'],
+['Which sentence uses commas correctly?','I like apples bananas and pears.|I like apples, bananas, and pears.|I like, apples bananas and pears.|I like apples bananas, and pears',1,'Commas separate items in a list.','Listedeki öğeleri virgül ayırır.'],
+['Which is correct (one dog)?','The dogs tail wagged.|The dog’s tail wagged.|The dogs’s tail wagged.|The dog tail’s wagged.',1,'“Dog’s” = the tail belongs to the dog.','“Dog’s” = kuyruk köpeğe ait.']];
+const W=[['beautiful','güzel','beutiful'],['friend','arkadaş','freind'],['because','çünkü','becuase'],['different','farklı','diffrent'],['necessary','gerekli','neccessary'],['receive','almak, teslim almak','recieve'],['separate','ayrı','seperate'],['tomorrow','yarın','tommorow'],['library','kütüphane','libary'],['umbrella','şemsiye','umbrela'],['restaurant','restoran','restaraunt'],['schedule','program','shedule'],['weird','tuhaf','wierd'],['business','iş, ticaret','buisness'],['calendar','takvim','calender'],['definitely','kesinlikle','definately'],['environment','çevre','enviroment'],['government','hükümet','goverment'],['interesting','ilginç','intresting'],['knowledge','bilgi','knowlege'],['language','dil','langauge'],['neighbor','komşu','nieghbor'],['popular','popüler','populer'],['question','soru','quesiton']];
+const B=[['I go to school every day.','Her gün okula giderim.'],['She is reading a book.','O bir kitap okuyor.'],['We were very happy yesterday.','Dün çok mutluyduk.'],['Could you help me, please?','Bana yardım edebilir misin lütfen?'],['They have lived here since 2020.','2020’den beri burada yaşıyorlar.'],['My sister likes ducks.','Ablam ördekleri sever.'],['I don’t know the answer.','Cevabı bilmiyorum.'],['What time does the lesson start?','Ders saat kaçta başlıyor?'],['He didn’t see anybody.','Kimseyi görmedi.'],['The weather is nice today.','Bugün hava güzel.'],['Where do you live?','Nerede yaşıyorsun?'],['I would like a cup of tea.','Bir fincan çay istiyorum.']];
+const sh=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const E=[];
+[[G,0],[C,1]].forEach(([L,u])=>L.forEach(g=>E.push({u,k:'mc',q:g[0],o:g[1].split('|'),a:g[2],x:[g[3],g[4]]})));
+W.forEach(([w,m])=>{const o=sh([w,...sh(W.map(x=>x[0]).filter(x=>x!=w)).slice(0,3)]);E.push({u:2,k:'mc',i:'voc',q:m,o,a:o.indexOf(w)})});
+W.forEach(([w,m])=>E.push({u:3,k:'sp',w,m}));
+W.forEach(([w,m,b])=>{const o=sh([w,b]);E.push({u:4,k:'mc',i:'spot',q:'',m,o,a:o.indexOf(w)})});
+W.forEach(([w,m])=>{let x;do x=sh([...w]);while(x.join('')==w);E.push({u:5,k:'un',w,m,t:x})});
+B.forEach(([s,m])=>E.push({u:6,k:'od',s,m,t:sh(s.split(' '))}));
+function mk(u,r,i,pa,dx){const o=r[1].split('|'),c=o[r[2]],s=sh(o);E.push({u,k:'mc',i,p:pa,q:r[0],o:s,a:s.indexOf(c),x:r[3]?[r[3],r[4]]:dx})}
+const T=[['I ___ to school every day.','walk|am walking|walked|will walked',0,'Habit → present simple.','Alışkanlık → geniş zaman.'],['Look! It ___ now.','rains|is raining|rained|rain',1,'Happening now → be + -ing.','Şu an oluyor → be + -ing.'],['She ___ her keys yesterday.','loses|lost|has lost|is losing',1,'Finished past time → past simple.','Bitmiş geçmiş → past simple.'],['I have never ___ sushi.','ate|eat|eaten|eating',2,'have + past participle.','have + fiilin 3. hali.'],['Tomorrow we ___ visit grandma.','will|did|have|are',0,'Future → will + verb.','Gelecek → will + fiil.'],['While I ___, the phone rang.','slept|was sleeping|sleep|am sleeping',1,'Long past action → past continuous.','Geçmişte süren eylem → past continuous.'],['___ you ever been to Paris?','Did|Have|Do|Are',1,'Life experience → present perfect.','Yaşam deneyimi → present perfect.'],['He ___ football on Sundays.','plays|play|is play|playing',0,'he + verb-s for habits.','Alışkanlıkta he + fiil-s.'],['They ___ dinner when I arrived.','were having|have|are having|has',0,'Action in progress in the past.','Geçmişte devam eden eylem.'],['If I ___ rich, I would travel.','am|was|were|will be',2,'Imaginary “if” → were.','Hayali “if” → were.'],['We ___ here for two hours.','wait|have waited|waited|will wait',1,'Started before, still true → present perfect.','Önce başladı, hâlâ sürüyor → present perfect.'],['She said she ___ come.','will|would|is|did',1,'Reported speech: will → would.','Dolaylı anlatım: will → would.']];
+const P=[['The meeting is ___ 5 pm.','at|on|in|by',0],['My birthday is ___ May.','at|on|in|to',2],['See you ___ Monday.','at|on|in|from',1],['The book is ___ the table.','in|on|at|to',1],['She was born ___ 2001.','on|at|in|since',2],['I go ___ school by bus.','to|at|in|on',0],['He is afraid ___ dogs.','from|of|for|at',1],['Thank you ___ your help.','for|to|of|at',0],['I’m waiting ___ the bus.','to|at|for|on',2],['We live ___ Turkey.','on|at|in|to',2],['She is married ___ a doctor.','with|to|by|at',1],['He arrived ___ the airport at noon.','at|in|to|on',0]];
+const M=[['___ going to the park. (They are)','Their|There|They’re|Thare',2],['It’s ___ cold today.','to|too|two|tow',1,'too = very','too = çok'],['The weather can ___ your mood.','affect|effect|afect|effet',0,'affect = verb','affect = fiil'],['The ___ of the storm was huge.','affect|effect|affects|effet',1,'effect = noun','effect = isim'],['Put the books over ___.','their|there|they’re|thier',1,'there = place','there = yer'],['I have ___ brothers.','to|too|two|tu',2,'two = the number 2','two = 2 sayısı'],['Can I ___ your pen? (take and give back)','lend|borrow|loan|lose',1,'borrow = take; lend = give','borrow = alıp geri vermek; lend = ödünç vermek'],['Which is correct?','Your welcome.|You’re welcome.|Youre welcome.|Yore welcome.',1,'You’re = you are','You’re = you are'],['I can’t ___ what he said.','hear|here|hair|hare',0,'hear = with your ears','hear = kulakla duymak'],['Come ___ and sit down.','hear|here|hair|hare',1,'here = this place','here = burası']];
+const D=[['It is 3 pm. You greet someone:','Good morning|Good afternoon|Good night|Good evening',1],['How do you ask someone to say it again?','What? Louder!|Could you repeat that, please?|Say again now.|I don’t care.',1],['“How are you?” — a natural reply:','I’m fine, thanks. And you?|Yes, I am.|At school.|Nice to meet you.',0],['You are late. You say:','Congratulations!|I’m sorry I’m late.|Good luck!|You’re welcome.',1],['At a restaurant, you want to pay:','Can I have the bill, please?|Give me paper.|I want money.|Bill now.',0],['You meet someone for the first time:','Nice to meet you.|See you soon.|Good night.|Excuse me?',0],['You don’t know a word. You ask:','What does this word mean?|You speak wrong.|I hate this.|Be quiet.',0],['Someone sneezes. You say:','Bless you.|Good luck.|Welcome.|Thank you.',0],['Before a test, you tell your friend:','Good luck!|Happy birthday!|Bless you.|Sorry!',0],['You want to pass someone in a crowd:','Excuse me.|Move now.|You, go.|Hello.',0]];
+const N=[['13 in words is…','thirteen|thirty|three ten|thirtene',0],['30 in words is…','thirteen|thirty|thirdy|three ten',1],['2:30 is…','half past two|quarter to two|two o’clock|half to two',0],['4:45 is…','quarter to five|quarter past four|half past four|five o’clock',0],['Monday is the ___ day of the week.','first|one|oneth|second',0],['3rd in words is…','third|threeth|three|thried',0],['12:00 sharp is…','twelve o’clock|half past twelve|twelve to one|twenty',0],['5th in words is…','fifth|fiveth|fith|five',0],['100 in words is…','one hundred|one thousand|ten ten|hundred one',0],['9:15 is…','quarter past nine|quarter to nine|half past nine|nine o’clock',0]];
+const R=[['Sara wakes up at seven every morning. She eats bread and cheese, then walks to school with her brother. After school she feeds the ducks in the park. She goes home at six and reads before bed.',[['What does Sara eat for breakfast?','bread and cheese|rice and eggs|only tea|fruit salad',0],['Who walks to school with her?','her brother|her sister|her friend|her teacher',0],['What does she do in the park?','She feeds the ducks.|She plays football.|She reads.|She sleeps.',0]]],['Tom wanted to learn English. He studied twenty minutes a day and listened to songs. After three months he could talk to tourists in his town. He says the secret is to practice a little every day.',[['How long did Tom study each day?','twenty minutes|two hours|one hour|ten minutes',0],['What helped him?','listening to songs|living abroad|a private teacher|nothing',0],['What is his secret?','practice a little every day|study all night|never make mistakes|buy many books',0]]],['The Blue Library opens at nine and closes at five. You can borrow three books for two weeks. If you keep a book longer, you pay a small fine. On Sundays the library is closed.',[['When does it close?','at five|at nine|at six|at three',0],['How many books can you borrow?','three|five|two|ten',0],['When is it closed?','on Sundays|on Mondays|on Saturdays|never',0]]]];
+const IV=[['go','went','gone','gitmek'],['eat','ate','eaten','yemek'],['see','saw','seen','görmek'],['take','took','taken','almak'],['write','wrote','written','yazmak'],['buy','bought','bought','satın almak'],['make','made','made','yapmak'],['know','knew','known','bilmek'],['begin','began','begun','başlamak'],['drink','drank','drunk','içmek'],['speak','spoke','spoken','konuşmak'],['give','gave','given','vermek'],['come','came','come','gelmek'],['bring','brought','brought','getirmek'],['think','thought','thought','düşünmek'],['sing','sang','sung','şarkı söylemek']];
+T.forEach(r=>mk(7,r));P.forEach(r=>mk(8,r,0,0,['Learn the preposition with its word as a pair.','Edatı kelimeyle birlikte bir kalıp olarak öğren.']));
+M.forEach(r=>mk(9,r,0,0,['They sound alike but mean different things. Say each one aloud.','Benzer duyulurlar ama anlamları farklı. Her birini yüksek sesle söyle.']));
+D.forEach(r=>mk(10,r,0,0,['A polite, natural choice.','Kibar ve doğal bir seçim.']));
+IV.forEach(v=>E.push({u:11,k:'ty',q:v[0]+' → ___  (2nd form)',m:v[3],w:v[1]}));IV.forEach(v=>E.push({u:11,k:'ty',q:v[0]+' → '+v[1]+' → ___  (3rd form)',m:v[3],w:v[2]}));
+R.forEach(([pa,qs])=>qs.forEach(r=>mk(12,r,'rd',pa,['Find the answer in the text.','Cevabı metinde bul.'])));
+N.forEach(r=>mk(13,r,0,0,['Practise saying it out loud.','Yüksek sesle söylemeyi dene.']));
+const LS=[
+[0,'Subject + verb agreement','Özne ve fiil uyumu','<p>With <b>he, she, it</b> add <b>-s</b>: she <b>goes</b>. With <b>I, you, we, they</b> use the base verb: they <b>go</b>.</p><p>Be: I <b>am</b>, he/she/it <b>is</b>, you/we/they <b>are</b>. Past: I/he/she/it <b>was</b>, you/we/they <b>were</b>.</p><p>Use <b>a</b> before a consonant sound and <b>an</b> before a vowel sound: a book, an apple.</p>','<p><b>he, she, it</b> ile fiile <b>-s</b> eklenir: she <b>goes</b>. <b>I, you, we, they</b> ile yalın fiil kullanılır: they <b>go</b>.</p><p>Be fiili: I <b>am</b>, he/she/it <b>is</b>, you/we/they <b>are</b>. Geçmiş: I/he/she/it <b>was</b>, you/we/they <b>were</b>.</p><p>Ünsüz sesten önce <b>a</b>, ünlü sesten önce <b>an</b>: a book, an apple.</p>'],
+[1,'Contractions & punctuation','Kısaltmalar ve noktalama','<p>A contraction joins two words. The apostrophe marks missing letters: do not → <b>don’t</b>, I am → <b>I’m</b>, it is → <b>it’s</b>.</p><p><b>its</b> = belongs to it. <b>it’s</b> = it is. <b>your</b> = belongs to you. <b>you’re</b> = you are.</p><p>A question ends with <b>?</b>. Use commas between list items: apples, bananas, and pears.</p>','<p>Kısaltma iki kelimeyi birleştirir. Kesme işareti eksik harfleri gösterir: do not → <b>don’t</b>, I am → <b>I’m</b>, it is → <b>it’s</b>.</p><p><b>its</b> = onun (sahiplik). <b>it’s</b> = it is. <b>your</b> = senin. <b>you’re</b> = you are.</p><p>Soru <b>?</b> ile biter. Liste öğeleri virgülle ayrılır: apples, bananas, and pears.</p>'],
+[2,'Learning new words','Yeni kelime öğrenme','<p>New words stick when you use them. Say the word, write it, then make your own sentence. Here you see the Turkish meaning and pick the English word.</p>','<p>Yeni kelimeler kullandıkça aklında kalır. Kelimeyi söyle, yaz, sonra kendi cümleni kur. Burada Türkçe anlamı görüp İngilizce kelimeyi seçeceksin.</p>'],
+[3,'Hearing and spelling','Duy ve yaz','<p>Break long words into parts: <b>beau·ti·ful</b>, <b>dif·fer·ent</b>. Press 🐢 to hear a word slowly, and say each part out loud before you type.</p>','<p>Uzun kelimeleri parçalara böl: <b>beau·ti·ful</b>, <b>dif·fer·ent</b>. Yavaş duymak için 🐢’ya bas ve yazmadan önce her parçayı yüksek sesle söyle.</p>'],
+[4,'Spelling tricks','Yazım hileleri','<p><b>fri-END</b>: a friend is there at the end. <b>Necessary</b>: one c, two s. <b>Separate</b> has “a rat” in it. <b>i before e, except after c</b>: rec<b>ei</b>ve, bel<b>ie</b>ve.</p>','<p><b>fri-END</b>: arkadaş sonuna kadar yanındadır. <b>Necessary</b>: bir c, iki s. <b>Separate</b> içinde “a rat” var. <b>i, c’den sonra hariç e’den önce gelir</b>: rec<b>ei</b>ve, bel<b>ie</b>ve.</p>'],
+[5,'Word chunks','Kelime parçaları','<p>Look for familiar chunks: <b>-tion</b>, <b>-ing</b>, <b>-ful</b>, <b>-ment</b>. Find the first letter and the ending, then fill in the middle.</p>','<p>Tanıdık parçaları ara: <b>-tion</b>, <b>-ing</b>, <b>-ful</b>, <b>-ment</b>. Önce ilk harfi ve sonu bul, ortayı doldur.</p>'],
+[6,'English word order','İngilizce cümle sırası','<p><b>Subject + verb + object</b>: I read books. Questions: <b>question word + do/does + subject + verb</b>: Where do you live? Time words like <b>every day</b> usually go at the end.</p>','<p><b>Özne + fiil + nesne</b>: I read books. Sorular: <b>soru kelimesi + do/does + özne + fiil</b>: Where do you live? <b>every day</b> gibi zaman ifadeleri genelde sonda durur.</p>'],
+[7,'The main tenses','Temel zamanlar','<p><b>Present simple</b>: habits: I walk. <b>Present continuous</b>: now: I am walking. <b>Past simple</b>: finished: I walked. <b>Present perfect</b>: have/has + past participle: I have walked. <b>Future</b>: will + verb: I will walk.</p>','<p><b>Geniş zaman</b>: alışkanlık: I walk. <b>Şimdiki zaman</b>: I am walking. <b>Geçmiş zaman</b>: I walked. <b>Present perfect</b>: have/has + fiilin 3. hali: I have walked. <b>Gelecek</b>: will + fiil: I will walk.</p>'],
+[8,'at, on, in','at, on, in','<p><b>at</b> a point: at 5 pm, at school. <b>on</b> days and surfaces: on Monday, on the table. <b>in</b> months, years, places: in May, in 2024, in Turkey. Movement: <b>to</b> school, <b>from</b> home.</p>','<p><b>at</b> nokta: at 5 pm, at school. <b>on</b> günler ve yüzeyler: on Monday, on the table. <b>in</b> aylar, yıllar, yerler: in May, in 2024, in Turkey. Hareket: <b>to</b> school, <b>from</b> home.</p>'],
+[9,'Words that sound alike','Benzer duyulan kelimeler','<p><b>their</b> (belongs to them), <b>there</b> (place), <b>they’re</b> (they are). <b>to</b> (direction), <b>too</b> (also / very), <b>two</b> (2). <b>affect</b> is a verb, <b>effect</b> is a noun.</p>','<p><b>their</b> (onlara ait), <b>there</b> (orada), <b>they’re</b> (they are). <b>to</b> (yön), <b>too</b> (de / çok), <b>two</b> (2). <b>affect</b> fiildir, <b>effect</b> isimdir.</p>'],
+[10,'Polite everyday English','Kibar günlük İngilizce','<p>Polite requests: <b>Could you…, please?</b> Thanks: <b>Thank you</b> → <b>You’re welcome</b>. If you didn’t hear: <b>Could you repeat that, please?</b> Greetings: good morning, good afternoon, good evening.</p>','<p>Kibar rica: <b>Could you…, please?</b> Teşekkür: <b>Thank you</b> → <b>You’re welcome</b>. Duymadıysan: <b>Could you repeat that, please?</b> Selamlaşma: good morning, good afternoon, good evening.</p>'],
+[11,'Irregular verbs','Düzensiz fiiller','<p>Some verbs change completely: go → <b>went</b> → <b>gone</b>. Learn them in groups. Type the past simple (2nd form) or the past participle (3rd form).</p>','<p>Bazı fiiller tamamen değişir: go → <b>went</b> → <b>gone</b>. Onları gruplar halinde öğren. Geçmiş zamanı (2. hal) ya da 3. hali yaz.</p>'],
+[12,'Reading for answers','Cevap için okuma','<p>Read the whole text once, then read each question. Look for the key words from the question in the text. The answer is always in the text.</p>','<p>Metni bir kez baştan sona oku, sonra soruları oku. Sorudaki anahtar kelimeleri metinde ara. Cevap her zaman metindedir.</p>'],
+[13,'Numbers and time','Sayılar ve zaman','<p>Numbers: thirteen (13), thirty (30). Ordinals: first, second, third, fourth. Time: <b>half past</b> = :30, <b>quarter to</b> = çeyrek var (:45), <b>o’clock</b> = exact hour.</p>','<p>Sayılar: thirteen (13), thirty (30). Sıra sayıları: first, second, third, fourth. Saat: <b>half past</b> = :30, <b>quarter to</b> = çeyrek var (:45), <b>o’clock</b> = tam saat.</p>']];
+LS.forEach(l=>E.push({u:l[0],k:'ls',t:[l[1],l[2]],b:[l[3],l[4]]}));
+function idsOf(u){return E.map((e,i)=>i).filter(i=>E[i].u==u).sort((a,b)=>(E[b].k=='ls')-(E[a].k=='ls'))}
+const ord=()=>U.flatMap((_,u)=>idsOf(u));
+function goNext(){const o=ord(),k=o.indexOf(cur);window._v='';k<o.length-1?openEx(o[k+1]):home()}
+const WD={beautiful:['very nice to look at','görmesi çok hoş; güzel','The garden is beautiful in spring.','Bahçe ilkbaharda çok güzel.'],friend:['a person you like and trust','sevdiğin ve güvendiğin kişi','My friend helps me with homework.','Arkadaşım ödevlerime yardım ediyor.'],because:['used to give a reason','sebep belirtmek için kullanılır','I stayed home because it was raining.','Yağmur yağdığı için evde kaldım.'],different:['not the same as another','bir başkasından farklı','This book is different from that one.','Bu kitap şundan farklı.'],necessary:['something you must have or do','mutlaka gerekli olan','Water is necessary for life.','Su yaşam için gereklidir.'],receive:['to get something that is given or sent','verilen ya da gönderileni almak','I received a letter today.','Bugün bir mektup aldım.'],separate:['apart, not together','ayrı, birlikte olmayan','Please keep the cups separate.','Lütfen bardakları ayrı tut.'],tomorrow:['the day after today','bugünden sonraki gün','I will call you tomorrow.','Seni yarın arayacağım.'],library:['a place where you borrow books','kitap ödünç aldığın yer','We study at the library.','Kütüphanede ders çalışıyoruz.'],umbrella:['something you hold over your head in the rain','yağmurda başının üstünde tuttuğun şey','Take an umbrella, it may rain.','Şemsiye al, yağmur yağabilir.'],restaurant:['a place where you pay to eat a meal','yemek yemek için gidilen yer','We had dinner at a nice restaurant.','Güzel bir restoranda akşam yemeği yedik.'],schedule:['a plan of times and events','zamanları ve etkinlikleri gösteren plan','My schedule is full on Monday.','Pazartesi programım dolu.'],weird:['strange or unusual','tuhaf veya alışılmadık','That is a weird sound.','Bu tuhaf bir ses.'],business:['work that makes money; a company','para kazandıran iş; şirket','She owns a small business.','Küçük bir işletmesi var.'],calendar:['a chart showing days and months','günleri ve ayları gösteren takvim','Write the date on the calendar.','Tarihi takvime yaz.'],definitely:['without any doubt','hiç şüphesiz','I will definitely come.','Kesinlikle geleceğim.'],environment:['the natural world around us','çevremizdeki doğal dünya','We must protect the environment.','Çevreyi korumalıyız.'],government:['the group that runs a country','bir ülkeyi yöneten grup','The government made a new law.','Hükümet yeni bir yasa çıkardı.'],interesting:['making you want to know more','daha fazlasını öğrenmek istetir','This story is very interesting.','Bu hikâye çok ilginç.'],knowledge:['what you know and understand','bildiklerin ve anladıkların','Reading gives you knowledge.','Okumak sana bilgi verir.'],language:['words people use to speak and write','insanların konuşup yazmak için kullandığı sözcükler','English is my favorite language.','İngilizce en sevdiğim dil.'],neighbor:['a person who lives near you','yakınında yaşayan kişi','My neighbor has a friendly dog.','Komşumun cana yakın bir köpeği var.'],popular:['liked by many people','birçok insanın sevdiği','Ducks are popular in the park.','Parkta ördekler çok sevilir.'],question:['something you ask to get an answer','cevap almak için sorduğun şey','Can I ask a question?','Bir soru sorabilir miyim?']};
+const WM=Object.fromEntries(W.map(x=>[x[0],x[1]]));
+const sb=s=>`<button class="sp" data-say="${esc(s)}" aria-label="Listen">🔊</button>`;
+const sbt=s=>`<button class="sp trb" data-say="${esc(s)}" data-lang="tr" aria-label="Dinle">🔊</button>`;
+function wcard(w){const d=WD[w];if(!d)return'';return`<div class="wc"><div class="ww">${esc(w)} ${sb(w)}</div><div class="wt">${esc(WM[w])} ${sbt(WM[w])}</div><div class="wd">${esc(d[0])} ${sb(d[0])}<div class="wtr">${esc(d[1])} ${sbt(d[1])}</div></div><div class="we">“${esc(d[2])}” ${sb(d[2])}<div class="wtr">${esc(d[3])} ${sbt(d[3])}</div></div></div>`}
+function openWB(){$('#home').hidden=true;$('#ex').hidden=true;$('#qz').hidden=true;$('#wb').hidden=false;lang();$('#wg').innerHTML=W.map(x=>wcard(x[0])).join('');scrollTo(0,0)}
+const GT=[['O her gün okula gider.','gider|git|gidiyor|gitmiş'],['Onlar dün mutluydu.','idi (tekil)|idiler (çoğul)|-dir (şimdiki)|-im (ben için)'],['Ben bir öğrenciyim.','-im (ben için)|-dir (o için)|-siniz / -lar|olmak'],['O çay sevmez.','sevmem / sevmezler|sevmez (o için)|değil|değildir'],['Burada çok insan var.','var (tekil)|-im|var (çoğul)|olmak'],['Bu bir elma.','bir (ünsüz önce)|bir (ünlü önce)|yanlış kalıp|biraz'],['Burada 2020’den beri yaşıyorum.','-dir (süre için)|-den beri (başlangıç)|sırasında|-de'],['O müzikle ilgileniyor.','içinde / -e|üstünde|-de|için'],['Yağmur yağarsa evde kalırız.','yanlış kalıp|-eceğiz|-iz|yaptı'],['Bu kitap şundan daha ilginç.','ilginç|daha ilginç|en ilginç|yanlış biçim'],['Ana ve ben arkadaşız.','beni / bana|ben|benim|benimki'],['İki cevap da doğru değil.','-dirler|idiler|-dir (tekil)|olmak'],['Akşamları okumaktan hoşlanırım.','oku|okumak|okumak (-ing)|okur'],['Bu gördüğüm en iyi film.','daha iyi|en iyi|iyi|yanlış biçim'],['Bardakta daha az su var.','daha az (sayılamaz)|daha az (sayılabilir)|az (sayılabilir)|çok (sayılabilir)'],['O eve gitti.','gitti|gitmiş|git|gidiyor'],['Dün pazara gittim.','git|gider|gitti|gitmiş'],['Kaç elman var?','ne kadar|kaç tane|daha fazla|az'],['Resim yapmakta iyiyim.','içinde|üstünde|-de / -mekte|için'],['O şu an televizyon izliyor.','izle|izler|izliyor|izledi']];
+const TT=[['Her gün okula yürürüm.','yürürüm|yürüyorum|yürüdüm|yanlış biçim'],['Bak! Şu an yağmur yağıyor.','yağar|yağıyor|yağdı|yağmur'],['O dün anahtarlarını kaybetti.','kaybeder|kaybetti|kaybetmiş|kaybediyor'],['Hiç suşi yemedim.','yedim|ye|yemiş|yiyor'],['Yarın büyükannemizi ziyaret edeceğiz.','-eceğiz|yaptı|sahip / -miş|-iz'],['Ben uyurken telefon çaldı.','uyudum|uyuyordum|uyurum|uyuyorum'],['Hiç Paris’e gittin mi?','yaptın mı|-miş misin|yapar mısın|-misin'],['O pazar günleri futbol oynar.','oynar|oyna|yanlış biçim|oynayan'],['Ben vardığımda onlar akşam yemeği yiyordu.','yiyorlardı|sahip|yiyorlar|sahip (tekil)'],['Zengin olsaydım seyahat ederdim.','-im|idi (tekil)|olsaydım|olacağım'],['İki saattir burada bekliyoruz.','bekle|bekliyoruz (süredir)|bekledik|bekleyeceğiz'],['Geleceğini söyledi.','-ecek|-ecekti|-dir|yaptı']];
+function att(b,L,X){X.forEach((t,i)=>{const e=E[b+i],og=L[i][1].split('|'),tr=t[1].split('|');e.qt=t[0];e.ot=e.o.map(o=>tr[og.indexOf(o)])})}
+att(0,G,GT);att(136,T,TT);
+function qh(e){return`<div class="big">${esc(e.q)}${e.k=='mc'&&e.i!='voc'?`<button class="sp sq" data-say="${esc(e.q)}" aria-label="Listen">🔊</button>`:e.i=='voc'?sbt(e.q):''}</div>`+(e.qt?`<div class="qtr">${esc(e.qt)} ${sbt(e.qt)}</div>`:'')}
+function oh(e,j,c){const o=e.o[j];return`<div class="ow"><button class="opt${c}" data-j="${j}"><span class="ot">${esc(o)}</span>${e.ot&&e.ot[j]?`<span class="otr">${esc(e.ot[j])}</span>`:''}</button>${sb(o)}${e.ot&&e.ot[j]?sbt(e.ot[j]):''}</div>`}
+let ST={done:{},xp:0,streak:0,last:'',lg:'en'};
+try{Object.assign(ST,JSON.parse(localStorage.getItem('kec1')||'{}'))}catch(e){}
+LG=ST.lg=='tr'?'tr':'en';
+const save=()=>{try{localStorage.setItem('kec1',JSON.stringify(ST))}catch(e){}};
+let cur=0,sel=null,built=[],tries=0,locked=false;
+function voices(){try{return speechSynthesis.getVoices().filter(v=>/^en/i.test(v.lang))}catch(e){return[]}}
+function best(){const l=ST.acc||'en-US',vs=voices();if(ST.vn){const v=vs.find(x=>x.name==ST.vn);if(v)return v}
+const sc=v=>(v.lang.replace('_','-')==l?50:0)+(/natural|neural|online|premium|enhanced|siri/i.test(v.name)?40:0)+(/google/i.test(v.name)?25:0)+(/samantha|ava|allison|serena|daniel|karen|moira|aria|jenny|libby|sonia|ryan|guy/i.test(v.name)?15:0)+(v.localService?0:5)-(/espeak|compact|fred|albert|zarvox|bad |bells|whisper|organ|trinoids|bubbles|boing|cellos|jester|deranged|hysterical|good news|junior|ralph|kathy/i.test(v.name)?80:0);
+return vs.sort((a,b)=>sc(b)-sc(a))[0]}
+function bestTR(){const sc=v=>(/natural|neural|online|premium|enhanced/i.test(v.name)?40:0)+(/google/i.test(v.name)?25:0)+(/emel|yelda|filiz|tolga|ahmet/i.test(v.name)?15:0)+(v.localService?0:5);return speechSynthesis.getVoices().filter(v=>/^tr/i.test(v.lang)).sort((a,b)=>sc(b)-sc(a))[0]}
+function toast(m){let d=$('#toast');if(!d){d=document.createElement('div');d.id='toast';d.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#20263a;color:#fff;padding:12px 18px;border-radius:14px;font-weight:800;z-index:9;max-width:90vw;text-align:center';document.body.appendChild(d)}d.textContent=m;d.hidden=false;clearTimeout(d._t);d._t=setTimeout(()=>d.hidden=true,4500)}
+function say(w,r,g){try{speechSynthesis.cancel();const tr=g=='tr',u=new SpeechSynthesisUtterance(tr?String(w).replace(/(^|\s)-/g,'$1').replace(/\//g,',').replace(/___/g,'boşluk'):String(w).replace(/___/g,'blank')),v=tr?bestTR():best();if(v){u.voice=v;u.lang=v.lang}else{u.lang=tr?'tr-TR':ST.acc||'en-US';if(tr&&speechSynthesis.getVoices().length)toast(LG=='tr'?'Bu cihazda Türkçe ses bulunamadı. Cihaz ayarlarından Türkçe ses ekleyebilirsin.':'No Turkish voice found on this device. You can add one in your device’s voice settings.')}u.rate=tr?.95:r;u.pitch=1;speechSynthesis.speak(u)}catch(e){}}
+function lang(){document.documentElement.lang=LG;document.querySelectorAll('[data-k]').forEach(n=>n.textContent=t(n.dataset.k));$('#le').classList.toggle('on',LG=='en');$('#lt').classList.toggle('on',LG=='tr')}
+function setLang(l){LG=ST.lg=l;save();lang();!$('#qz').hidden?renderQ():!$('#wb').hidden?openWB():$('#ex').hidden?home():labels()}
+$('#le').onclick=()=>setLang('en');$('#lt').onclick=()=>setLang('tr');
+const ac=()=>$('#acc').textContent='🔈 '+(ST.acc=='en-GB'?'UK':'US');ac();$('#acc').onclick=()=>{ST.acc=ST.acc=='en-GB'?'en-US':'en-GB';ST.vn='';save();ac();fillV();say('Hello, Kubra! This is how I sound.',.9)};
+function fillV(){const s=$('#vs'),vs=voices();s.innerHTML='<option value="">Auto</option>'+vs.map(v=>`<option value="${esc(v.name)}">${esc(v.name.replace(/Microsoft |Google /,''))} (${esc(v.lang)})</option>`).join('');s.value=ST.vn||''}
+$('#vs').onchange=e=>{ST.vn=e.target.value;save();say('Hello, Kubra! This is how I sound.',.9)};
+try{speechSynthesis.onvoiceschanged=fillV}catch(e){}fillV();
+function home(){$('#ex').hidden=true;$('#home').hidden=false;lang();
+const n=E.length,d=Object.keys(ST.done).length,nx0=ord().find(i=>!ST.done[i]),nx=nx0==null?-1:nx0;
+$('#sub').textContent=t('sub',n,U.length);$('#xp').textContent=$('#s2').textContent=ST.xp;$('#sk').textContent=$('#s3').textContent=ST.streak;$('#s1').textContent=d;
+$('#hi').textContent=d==0?t('hi0'):d==n?t('hiN'):t('hiD',d,n);
+$('#cont').textContent=nx<0?t('rev'):(d?t('cont'):t('start'))+p(U[E[nx].u]);$('#cont').onclick=()=>openEx(nx<0?0:nx);
+$('#pb').style.width=d/n*100+'%';$('#qbtns').innerHTML=QC.map(c=>`<button class="btn g" data-q="${c[0]}">${t(c[0])}</button>`).join('');
+$('#units').innerHTML=U.map((nm,u)=>{const ids=idsOf(u);return`<div class="uh"><b>${esc(p(nm))}</b><span>${ids.filter(i=>ST.done[i]).length} / ${ids.length}</span></div><div class="dots">${ids.map(i=>`<button class="dot ${ST.done[i]?'dn':i==nx?'nx':''}" data-i="${i}" aria-label="${u+1}.${ids.indexOf(i)+1}">${ST.done[i]?'✓':E[i].k=='ls'?'📖':''}</button>`).join('')}</div>`}).join('');
+save();scrollTo(0,0)}
+$('#units').onclick=e=>{const b=e.target.closest('.dot');if(b)openEx(+b.dataset.i)};
+function labels(){const e=E[cur],ids=idsOf(e.u);$('#chk').textContent=t(e.k=='ls'?'got':'chk');
+$('#eu').textContent=p(U[e.u])+' · '+(ids.indexOf(cur)+1)+' / '+ids.length;$('#ei').textContent=t(e.i||e.k);
+$('#ub').style.width=ids.filter(j=>ST.done[j]).length/ids.length*100+'%';draw()}
+function openEx(i){cur=i;sel=null;built=[];tries=0;locked=false;$('#home').hidden=true;$('#ex').hidden=false;$('#fb').innerHTML='';$('#chk').hidden=false;lang();labels();scrollTo(0,0);
+if(E[i].k=='sp')setTimeout(()=>say(E[i].w,.9),300)}
+function draw(){const e=E[cur];let h='';if(e.k=='ls'){$('#body').innerHTML=`<div class="big">${esc(p(e.t))}</div><div class="lesson">${p(e.b)}</div>`;return}if(e.p)h+=`<div class="lesson">${esc(e.p)} <button class="btn g sq" data-say="${esc(e.p)}" aria-label="Listen">🔊</button></div>`;
+if(e.q)h+=qh(e);
+if(e.m&&e.k!='od')h+=`<div class="small">${t('mean')}${esc(e.m)} ${sbt(e.m)}</div>`;
+if(e.k=='od')h+=`<div class="big">“${esc(e.m)}” ${sbt(e.m)}</div>`;
+if(e.k=='mc')h+='<div class="opts">'+e.o.map((o,j)=>oh(e,j,sel===j?' on':'')).join('')+'</div>';
+if(e.k=='sp'||e.k=='ty')h+=(e.k=='sp'?`<div class="row"><button class="btn g" id="snd" aria-label="Play">🔊</button><button class="btn g" id="slw" aria-label="Slow">🐢</button></div>`:'')+`<input id="ti" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="${esc(t('ph'))}" value="${esc(window._v||'')}">`;
+if(e.k=='un'||e.k=='od')h+=`<div class="ans">${built.map(i=>`<button class="tile" data-r="${i}">${esc(e.t[i])}</button>`).join('')}</div><div class="bank">${e.t.map((x,i)=>built.includes(i)?'':`<button class="tile" data-a="${i}">${esc(x)}</button>`).join('')}</div>`;
+$('#body').innerHTML=h;const ti=$('#ti');if(ti){ti.oninput=()=>window._v=ti.value;ti.onkeydown=ev=>{if(ev.key=='Enter')check()};if(!locked&&!window._nf)ti.focus()}}
+$('#body').onclick=ev=>{const b=ev.target.closest('button');if(!b)return;const d=b.dataset,e=E[cur];
+if(b.id=='snd')return say(e.w,.9);if(b.id=='slw')return say(e.w,.4);if(b.dataset.say)return say(b.dataset.say,.9,b.dataset.lang);if(locked)return;
+if(d.j!=null)sel=+d.j;else if(d.a!=null){built.push(+d.a);if(e.k=='od')say(e.t[+d.a],.9)}else if(d.r!=null)built=built.filter(x=>x!=+d.r);else return;draw()};
+function nextBtn(c){return`<button class="btn ${c}" id="nb">${t('nx')} →</button>`}
+function check(){if(locked)return;const e=E[cur];if(e.k=='ls'){if(!ST.done[cur]){ST.done[cur]=1;ST.xp+=5;$('#xp').textContent=ST.xp}save();return goNext()}let a,r;
+if(e.k=='mc'){if(sel==null)return;a=e.o[sel];r=e.o[e.a]}
+else if(e.k=='sp'||e.k=='ty'){a=($('#ti').value||'').trim();if(!a)return;r=e.w}
+else{if(!built.length)return;a=built.map(i=>e.t[i]).join(e.k=='un'?'':' ');r=e.k=='un'?e.w:e.s}
+const ok=e.k=='od'?a==r:a.toLowerCase()==r.toLowerCase();let h;
+if(ok){locked=true;const f=!ST.done[cur];ST.done[cur]=1;
+if(f){ST.xp+=10;const td=new Date().toDateString();if(ST.last!=td){ST.streak=ST.last==new Date(Date.now()-864e5).toDateString()?ST.streak+1:1;ST.last=td}}
+$('#xp').textContent=ST.xp;$('#sk').textContent=ST.streak;
+h=`<div class="fb ok">🦆 ${t('ok')}${f?' '+t('xp10'):''}${e.x?'<div>'+esc(p(e.x))+'</div>':''}<div>${esc(r)}</div>${wcard(e.w||r)}${nextBtn('ok')}</div>`;
+say(e.k=='mc'&&!e.i&&(e.q||'').includes('___')?e.q.replace('___',r):(e.w||r),.9);save()}
+else{tries++;
+if(tries<2){h=`<div class="fb no">${t('again')}${(e.k=='sp'||e.k=='ty')?'<div>'+esc(t('st',e.w[0],e.w.length))+'</div>':''}</div>`;sel=null;if(e.k!='sp'&&e.k!='ty')built=[];draw()}
+else{locked=true;h=`<div class="fb no">${t('ans')} ${esc(r)}${e.x?'<div>'+esc(p(e.x))+'</div>':''}${wcard(e.w||r)}${nextBtn('')}</div>`;if(e.w)say(e.w,.9)}}
+$('#fb').innerHTML=h;$('#chk').hidden=locked;const nb=$('#nb');if(nb)nb.onclick=goNext;
+const c=idsOf(e.u);$('#ub').style.width=c.filter(j=>ST.done[j]).length/c.length*100+'%'}
+$('#chk').onclick=check;$('#back').onclick=()=>{window._v='';home()};
+const oe=openEx;openEx=function(i){window._v='';oe(i)};
+const QC=[['q1',10,null],['q2',15,[0,1,7,8,9]],['q3',15,[4]],['q4',15,[2]],['q5',40,null]];
+let Q=null;
+function startQ(k){const [,n,us]=QC.find(c=>c[0]==k);Q={k,l:sh(E.map((e,i)=>i).filter(i=>E[i].k=='mc'&&(!us||us.includes(E[i].u)))).slice(0,n),i:0,s:0,m:[],a:null};$('#home').hidden=true;$('#ex').hidden=true;$('#qz').hidden=false;renderQ();scrollTo(0,0)}
+function renderQ(){if(!Q)return;lang();const n=Q.l.length,c=$('#qc');$('#qb').style.width=Math.min(Q.i,n)/n*100+'%';
+if(Q.i>=n){c.innerHTML=`<div class="big">${Q.s==n?t('sc3'):t('sc',Q.s,n)}</div><div>${t('sc2')}</div>`+(Q.m.length?`<div class="small" style="margin:14px 0 6px">${t('miss')}</div>`+Q.m.map(i=>{const e=E[i];return`<div class="fb no" style="font-weight:600">${esc(e.q||e.m)}<div>✓ ${esc(e.o[e.a])}</div></div>`}).join(''):'')+`<div class="row" style="margin-top:14px"><button class="btn" id="qagain">${t('ag')}</button></div>`;$('#qagain').onclick=()=>{Q=null;$('#qz').hidden=true;home()};return}
+const e=E[Q.l[Q.i]],a=Q.a;c.innerHTML=`<div class="small">${t('qn',Q.i+1,n)} · ${esc(p(U[e.u]))}</div><div style="font-weight:800;color:var(--acc)">${t(e.i||'mc')}</div>`+(e.p?`<div class="lesson">${esc(e.p)}</div>`:'')+(e.q?qh(e):'')+(e.m?`<div class="small">${t('mean')}${esc(e.m)} ${sbt(e.m)}</div>`:'')+'<div class="opts">'+e.o.map((o,j)=>oh(e,j,a!=null?(j==e.a?' ok':j==a?' no':''):'')).join('')+'</div>'+(a!=null?`<div class="fb ${a==e.a?'ok':'no'}">${a==e.a?'🦆 '+t('ok'):t('ans')+' '+esc(e.o[e.a])}${e.x?'<div>'+esc(p(e.x))+'</div>':''}<button class="btn" id="qn">${t('nx')} →</button></div>`:'');
+if(a!=null)$('#qn').onclick=()=>{if(a==e.a)Q.s++;else Q.m.push(Q.l[Q.i]);Q.i++;Q.a=null;if(Q.i>=n){ST.xp+=Q.s*3;save();$('#xp').textContent=ST.xp}renderQ()}}
+$('#qc').onclick=ev=>{const s=ev.target.closest('[data-say]');if(s)return say(s.dataset.say,.9,s.dataset.lang);const b=ev.target.closest('.opt');if(!b||!Q||Q.a!=null)return;const e=E[Q.l[Q.i]];Q.a=+b.dataset.j;renderQ();say(e.k=='mc'&&!e.i&&(e.q||'').includes('___')?e.q.replace('___',e.o[e.a]):(e.w||e.o[e.a]),.9)};
+$('#qbtns').onclick=ev=>{const b=ev.target.closest('[data-q]');if(b)startQ(b.dataset.q)};
+$('#qback').onclick=()=>{Q=null;$('#qz').hidden=true;home()};
+$('#wbtn').onclick=openWB;$('#wback').onclick=()=>{$('#wb').hidden=true;home()};
+$('#wg').onclick=$('#fb').onclick=ev=>{const b=ev.target.closest('[data-say]');if(b)say(b.dataset.say,.9,b.dataset.lang)};
+const EM={'🔊':'sound','🔈':'sound','🐢':'slow','🔥':'flame','⚡':'bolt','📖':'book','📇':'cards','🦆':'duck','🎉':'spark'},EX=/([🔊🔈🐢🔥⚡📖📇🦆🎉])/u;
+function icons(r){const w=document.createTreeWalker(r,NodeFilter.SHOW_TEXT,{acceptNode:n=>EX.test(n.nodeValue)&&!/^(OPTION|SCRIPT|STYLE|TEXTAREA)$/.test(n.parentNode.nodeName)?1:2}),L=[];while(w.nextNode())L.push(w.currentNode);L.forEach(n=>{const f=document.createDocumentFragment();n.nodeValue.split(EX).forEach(s=>{if(EM[s]){const v=document.createElementNS('http://www.w3.org/2000/svg','svg');v.setAttribute('class','ic '+EM[s]);v.setAttribute('aria-hidden','true');v.innerHTML='<use href="#i-'+EM[s]+'"/>';f.appendChild(v)}else if(s)f.appendChild(document.createTextNode(s))});n.replaceWith(f)})}
+new MutationObserver(()=>icons(document.body)).observe(document.body,{childList:true,subtree:true,characterData:true});icons(document.body);
+home();
+</script></body></html>
